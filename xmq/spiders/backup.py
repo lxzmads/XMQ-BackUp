@@ -8,7 +8,7 @@ from xmq.items import TopicImagesItem, TopicFilesItem, GroupItem, TopicItem
 
 class BackupSpider(scrapy.Spider):
     name = 'backup'
-    allowed_domains = ['xiaomiquan.com']
+    allowed_domains = ['zsxq.com']
     start_urls = [XmqApi.URL_GROUPS]
 
     def parse(self, response):

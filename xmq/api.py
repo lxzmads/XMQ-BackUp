@@ -23,14 +23,14 @@ class XmqApi(object):
     """
     小密圈API接口信息
     """
-    API_VERSION = 'v1.8'
+    API_VERSION = 'v1.10'
 
-    URL_API = 'https://api.xiaomiquan.com/%s/' % API_VERSION
-    URL_LOGIN = 'https://wx.xiaomiquan.com/dweb/#/login'
+    URL_API = 'https://api.zsxq.com/%s/' % API_VERSION
+    URL_LOGIN = 'https://api.zsxq.com/dweb/#/login'
     URL_GROUPS = urljoin(URL_API, 'groups')
     URL_TOPICS_FORMAT = urljoin(URL_API, 'groups/{group_id}/topics?count=20&end_time={end_time}')
 
-    URL_FILE_INFO_FORMAT = 'https://api.xiaomiquan.com/%s/files/{file_id}' % API_VERSION
+    URL_FILE_INFO_FORMAT = 'https://api.zsxq.com/%s/files/{file_id}' % API_VERSION
     URL_FILE_DOWNLOAD_FORMAT = '%s/%s' % (URL_FILE_INFO_FORMAT, 'download_url')
 
     # headers中access_token的字段名
@@ -132,4 +132,4 @@ class XmqApiResponse(TextResponse):
 
     @property
     def code(self):
-        return self.json.get('code')
+        return self.json.get('succeeded')
